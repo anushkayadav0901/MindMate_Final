@@ -1,0 +1,11 @@
+omegaconf
+matplotlib
+PyMuPDF
+ultralytics>=8.2.85
+doclayout-yolo>=0.0.2b1,<0.0.5
+paddlepaddle
+paddleocr==2.7.3
+
+torch
+transformers<=4.47
+numpy<2  # 👈 ADD THIS LINE

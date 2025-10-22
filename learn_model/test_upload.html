@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test PDF Upload</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .upload-area { 
+            border: 2px dashed #ccc; 
+            padding: 40px; 
+            text-align: center; 
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        button { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        .result { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 5px; 
+            margin-top: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .loading { display: none; color: #007bff; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test PDF Upload to AI Server</h1>
+        <p>Server: <code id="serverUrl">http://localhost:5001</code></p>
+        <p>Status: <span id="serverStatus">Checking...</span></p>
+        
+        <div class="upload-area">
+            <input type="file" id="pdfFile" accept=".pdf">
+            <br><br>
+            <button onclick="uploadPDF()">Upload PDF to AI Server</button>
+        </div>
+
+        <div id="loading" class="loading">🔄 Processing PDF with AI model...</div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const SERVER_URL = 'http://localhost:5001';
+        
+        // Check server health on page load
+        async function checkServerHealth() {
+            try {
+                const response = await fetch(`${SERVER_URL}/health`);
+                if (response.ok) {
+                    document.getElementById('serverStatus').innerHTML = 
+                        '✅ <span style="color: green;">Server is running</span>';
+                } else {
+                    document.getElementById('serverStatus').innerHTML = 
+                        '❌ <span style="color: red;">Server not responding</span>';
+                }
+            } catch (error) {
+                document.getElementById('serverStatus').innerHTML = 
+                    '❌ <span style="color: red;">Cannot connect to server</span>';
+            }
+        }
+
+        async function uploadPDF() {
+            const fileInput = document.getElementById('pdfFile');
+            const file = fileInput.files[0];
+            const resultDiv = document.getElementById('result');
+            const loadingDiv = document.getElementById('loading');
+            
+            if (!file) {
+                alert('Please select a PDF file');
+                return;
+            }
+
+            // Show loading
+            loadingDiv.style.display = 'block';
+            resultDiv.innerHTML = '';
+
+            const formData = new FormData();
+            formData.append('pdf', file);
+
+            try {
+                console.log('📤 Uploading file:', file.name, 'to:', SERVER_URL);
+                
+                const response = await fetch(`${SERVER_URL}/process-pdf`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                console.log('📥 Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                }
+                
+                const result = await response.json();
+                console.log('✅ Server response:', result);
+                
+                // Display result
+                resultDiv.innerHTML = '<h3>✅ AI Model Response:</h3>' + 
+                    '<div class="result">' + JSON.stringify(result, null, 2) + '</div>';
+                
+            } catch (error) {
+                console.error('❌ Upload failed:', error);
+                resultDiv.innerHTML = '<h3>❌ Error:</h3>' + 
+                    '<div class="result error">' + error.message + 
+                    '<br><br>Make sure the Python server is running on port 5001</div>';
+            } finally {
+                loadingDiv.style.display = 'none';
+            }
+        }
+
+        // Allow drag and drop
+        const uploadArea = document.querySelector('.upload-area');
+        const fileInput = document.getElementById('pdfFile');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#007bff';
+            uploadArea.style.background = '#f0f8ff';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#ccc';
+            uploadArea.style.background = '';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ccc';
+            uploadArea.style.background = '';
+            
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                uploadArea.innerHTML = `📄 Selected: ${e.dataTransfer.files[0].name}<br><br>
+                <button onclick="uploadPDF()">Upload PDF to AI Server</button>`;
+            }
+        });
+
+        // Check server health when page loads
+        checkServerHealth();
+    </script>
+</body>
+</html>

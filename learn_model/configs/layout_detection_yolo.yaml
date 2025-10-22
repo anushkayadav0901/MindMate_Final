@@ -1,0 +1,15 @@
+inputs: sample_dataset/pdfs/input_pages  # Path to a directory containing multiple PNG/JPEG files
+outputs: sample_dataset/outputs
+
+tasks:
+  layout_detection:
+    model: layout_detection_yolo
+    model_config:
+      img_size: 1024
+      conf_thres: 0.25
+      iou_thres: 0.45
+      model_path: models/Layout/YOLO/doclayout_yolo_ft.pt
+      visualize: False  # Disable if only need JSON
+      device: cpu  # Change to 'mps' if on Apple Silicon
+    save_results: True
+    json_output: True  # New flag for JSON export
