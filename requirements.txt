@@ -1,18 +1,9 @@
-# 🎯 MAIN PROJECT requirements.txt
-# Web Framework
+# Updated requirements.txt - Compatible with Python 3.12
 flask==2.3.3
 flask-cors==4.0.0
-
-# PDF Processing
 PyMuPDF==1.23.8
 pdf2image==1.16.3
-pillow==10.0.1
-
-# Utilities
+pillow==10.1.0
 requests==2.31.0
-numpy==1.24.3
+numpy==1.26.0  # ✅ Updated to work with Python 3.12
 python-multipart==0.0.6
-
-# Optional: For enhanced features
-# openai==0.28.0  # If adding AI chatbot later
-# google-generativeai==0.3.0  # If using Gemini AI
