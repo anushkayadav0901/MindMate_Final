@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import HomePage from './pages/HomePage';
+import EmotionAwareHomePage from './pages/EmotionAwareHomePage';
 import LearnPage from './pages/LearnPage';
 import RelaxPage from './pages/RelaxPage';
 import ChatPage from './pages/ChatPage';
-import { Home, BookOpen, Wind, MessageCircle, Award } from 'lucide-react';
+import { VRTherapyPage } from './components/VRTherapy/VRTherapyPage';
+import { Home, BookOpen, Wind, MessageCircle, Award, Glasses } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
-type PageType = 'home' | 'learn' | 'relax' | 'chat';
+
+type PageType = 'home' | 'learn' | 'relax' | 'chat' | 'vr-therapy';
 
 interface User {
   id: string;
@@ -78,15 +80,29 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage onNavigate={handleNavigation} onMoodDetected={handleMoodDetected} />;
+        return (
+          <EmotionAwareHomePage
+            onNavigate={handleNavigation}
+            onMoodDetected={handleMoodDetected}
+            addWellnessPoints={addWellnessPoints}
+          />
+        );
       case 'learn':
         return <LearnPage />;
       case 'relax':
         return <RelaxPage />;
       case 'chat':
         return <ChatPage />;
+      case 'vr-therapy':
+        return <VRTherapyPage onSessionComplete={() => addWellnessPoints(25)} />;
       default:
-        return <HomePage onNavigate={handleNavigation} onMoodDetected={handleMoodDetected} />;
+        return (
+          <EmotionAwareHomePage
+            onNavigate={handleNavigation}
+            onMoodDetected={handleMoodDetected}
+            addWellnessPoints={addWellnessPoints}
+          />
+        );
     }
   };
 
@@ -154,6 +170,17 @@ function App() {
             title="Chat"
           >
             <MessageCircle className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => handleNavigation('vr-therapy')}
+            className={`p-4 rounded-2xl transition-all ${
+              currentPage === 'vr-therapy'
+                ? 'bg-white/30 text-white scale-110'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+            title="VR Therapy"
+          >
+            <Glasses className="w-6 h-6" />
           </button>
         </div>
       </nav>
