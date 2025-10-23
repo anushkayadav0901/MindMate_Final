@@ -36,42 +36,46 @@ export interface SpeechOptions {
   }
 
   async speak(text: string, options: SpeechOptions = {}, onSpeakingChange?: (speaking: boolean) => void): Promise<void> {
-    try {
-      await this.requestPermission();
+    return new Promise(async (resolve, reject) => {
+      try {
+        await this.requestPermission();
 
-      if (this.currentUtterance) {
-        this.synthesis.cancel();
-      }
+        if (this.currentUtterance) {
+          this.synthesis.cancel();
+        }
 
-      this.isSpeakingCallback = onSpeakingChange || null;
+        this.isSpeakingCallback = onSpeakingChange || null;
 
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = options.rate || 0.9;
-      utterance.pitch = options.pitch || 1;
-      utterance.volume = options.volume || 1;
-      utterance.lang = options.lang || 'en-US';
-  
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = options.rate || 0.9;
+        utterance.pitch = options.pitch || 1;
+        utterance.volume = options.volume || 1;
+        utterance.lang = options.lang || 'en-US';
+    
         utterance.onstart = () => {
           this.isSpeakingCallback?.(true);
         };
-  
+    
         utterance.onend = () => {
           this.isSpeakingCallback?.(false);
           this.currentUtterance = null;
           resolve();
         };
-  
+    
         utterance.onerror = (event) => {
           this.isSpeakingCallback?.(false);
           this.currentUtterance = null;
           // Fix 2: Reject with an Error object instead of the event
           reject(new Error(`Speech synthesis error: ${event.error}`));
         };
-  
+    
         this.currentUtterance = utterance;
         this.synthesis.speak(utterance);
-      });
-    }
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
   
     stop() {
       this.synthesis.cancel();

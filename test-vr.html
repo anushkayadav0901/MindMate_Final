@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Therapy Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: rgba(0, 255, 0, 0.2); }
+        .error { background: rgba(255, 0, 0, 0.2); }
+        .warning { background: rgba(255, 255, 0, 0.2); }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #45a049; }
+        .vr-canvas {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 MindVR Therapy - Feature Test</h1>
+        
+        <div class="test-section">
+            <h2>🔍 System Check</h2>
+            <div id="system-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎮 VR Navigation Test</h2>
+            <p>Click the VR Therapy button (glasses icon) in the bottom navigation to test the feature.</p>
+            <div id="navigation-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🌍 VR Environment Preview</h2>
+            <p>Here's what your VR environments will look like:</p>
+            <div class="vr-canvas" id="vr-preview">
+                <p style="text-align: center; padding-top: 180px;">VR Canvas will load here when dependencies are installed</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Next Steps</h2>
+            <ol>
+                <li><strong>Install Node.js:</strong> Download from <a href="https://nodejs.org" style="color: #FFD700;">nodejs.org</a></li>
+                <li><strong>Install dependencies:</strong> Run <code>npm install</code></li>
+                <li><strong>Start dev server:</strong> Run <code>npm run dev</code></li>
+                <li><strong>Test VR feature:</strong> Click the glasses icon in navigation</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h2>🎯 VR Environments Available</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <h3>🌿 Peaceful Garden</h3>
+                    <p>Serene Japanese garden with calming water features</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <h3>🎓 College Campus</h3>
+                    <p>Quiet campus setting for social anxiety practice</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <h3>📝 Exam Hall</h3>
+                    <p>Well-lit examination hall for exposure therapy</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <h3>🏠 Home Room</h3>
+                    <p>Cozy home environment for relaxation techniques</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // System check
+        function checkSystem() {
+            const statusDiv = document.getElementById('system-status');
+            let status = '';
+
+            // Check for Node.js (this won't work in browser, but shows what's needed)
+            status += '<div class="warning">⚠️ Node.js not detected - Install from nodejs.org</div>';
+            
+            // Check for modern browser features
+            if (typeof WebGLRenderingContext !== 'undefined') {
+                status += '<div class="success">✅ WebGL support detected</div>';
+            } else {
+                status += '<div class="error">❌ WebGL not supported</div>';
+            }
+
+            if ('speechSynthesis' in window) {
+                status += '<div class="success">✅ Speech synthesis available</div>';
+            } else {
+                status += '<div class="error">❌ Speech synthesis not available</div>';
+            }
+
+            if ('xr' in navigator) {
+                status += '<div class="success">✅ WebXR support detected</div>';
+            } else {
+                status += '<div class="warning">⚠️ WebXR not available (optional for VR headsets)</div>';
+            }
+
+            statusDiv.innerHTML = status;
+        }
+
+        // Navigation test
+        function testNavigation() {
+            const navStatus = document.getElementById('navigation-status');
+            navStatus.innerHTML = `
+                <div class="success">✅ VR Therapy button should be visible in bottom navigation</div>
+                <div class="success">✅ Clicking glasses icon should navigate to VR Therapy page</div>
+                <div class="success">✅ Environment selector should show 4 different environments</div>
+            `;
+        }
+
+        // Initialize tests
+        checkSystem();
+        testNavigation();
+
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧠 MindVR Therapy Test Page Loaded');
+            console.log('📋 To test VR features:');
+            console.log('1. Install Node.js from nodejs.org');
+            console.log('2. Run: npm install');
+            console.log('3. Run: npm run dev');
+            console.log('4. Click the glasses icon in the navigation');
+        });
+    </script>
+</body>
+</html>

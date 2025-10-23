@@ -4,7 +4,11 @@ import { VREnvironmentSelector } from './VREnvironmentSelector';
 import { VREnvironment } from './VREnvironments/types';
 import { environments } from '../../utils/vrTherapyUtils';
 
-export const VRTherapyPage: React.FC = () => {
+interface VRTherapyPageProps {
+  onSessionComplete?: () => void;
+}
+
+export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete }) => {
   const [selectedEnvironment, setSelectedEnvironment] = useState<VREnvironment | null>(null);
   const [sessionActive, setSessionActive] = useState(false);
 
@@ -16,6 +20,9 @@ export const VRTherapyPage: React.FC = () => {
 
   const handleEndSession = () => {
     setSessionActive(false);
+    if (onSessionComplete) {
+      onSessionComplete();
+    }
   };
 
   return (
