@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import { VRScene } from './VRScene';
 import { VREnvironmentSelector } from './VREnvironmentSelector';
+import { SessionSummary } from './SessionSummary';
 import { VREnvironment } from './VREnvironments/types';
 import { environments } from '../../utils/vrTherapyUtils';
+
+interface SessionData {
+  environmentId: string;
+  duration: number;
+  peakAnxiety: number;
+  averageAnxiety: number;
+  anxietyHistory: number[];
+  completed: boolean;
+}
 
 interface VRTherapyPageProps {
   onSessionComplete?: () => void;
@@ -11,6 +21,8 @@ interface VRTherapyPageProps {
 export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete }) => {
   const [selectedEnvironment, setSelectedEnvironment] = useState<VREnvironment | null>(null);
   const [sessionActive, setSessionActive] = useState(false);
+  const [showSessionSummary, setShowSessionSummary] = useState(false);
+  const [sessionData, setSessionData] = useState<SessionData | null>(null);
 
   const handleStartSession = () => {
     if (selectedEnvironment) {
@@ -20,9 +32,26 @@ export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete 
 
   const handleEndSession = () => {
     setSessionActive(false);
+  };
+
+  const handleSessionData = (data: SessionData) => {
+    setSessionData(data);
+    setShowSessionSummary(true);
+  };
+
+  const handleCloseSummary = () => {
+    setShowSessionSummary(false);
+    setSessionData(null);
+    setSelectedEnvironment(null);
     if (onSessionComplete) {
       onSessionComplete();
     }
+  };
+
+  const handleStartNewSession = () => {
+    setShowSessionSummary(false);
+    setSessionData(null);
+    setSessionActive(false);
   };
 
   return (
@@ -46,6 +75,7 @@ export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete 
                   environmentId={selectedEnvironment.id}
                   onSessionStart={handleStartSession}
                   onSessionEnd={handleEndSession}
+                  onSessionData={handleSessionData}
                 />
               </div>
             </>
@@ -55,18 +85,31 @@ export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete 
 
           {/* Instructions */}
           <div className="bg-gray-800/50 rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">How to Use</h3>
+            <h3 className="text-xl font-semibold mb-4">How to Use VR Therapy</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-300">
-              <li>Select an environment from the options above</li>
-              <li>Click "Start Experience" to begin</li>
-              <li>Use your mouse to look around:</li>
+              <li>Select a therapeutic environment that matches your current needs</li>
+              <li>Click "Start Therapy Session" to begin your guided experience</li>
+              <li>Use the anxiety slider to track your emotional state in real-time</li>
+              <li>Follow the guided instructions that appear during your session</li>
+              <li>Practice breathing exercises when anxiety levels rise (7+ on the scale)</li>
+              <li>Use mouse controls to explore the environment:</li>
               <li className="ml-6">- Left click + drag to rotate the view</li>
               <li className="ml-6">- Right click + drag to pan</li>
               <li className="ml-6">- Scroll to zoom in/out</li>
+              <li>End your session anytime to see your progress and achievements</li>
             </ul>
           </div>
         </div>
       </div>
+
+      {/* Session Summary Modal */}
+      {showSessionSummary && sessionData && (
+        <SessionSummary
+          sessionData={sessionData}
+          onClose={handleCloseSummary}
+          onStartNewSession={handleStartNewSession}
+        />
+      )}
     </div>
   );
 };
