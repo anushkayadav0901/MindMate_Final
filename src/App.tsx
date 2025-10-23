@@ -4,11 +4,13 @@ import LearnPage from './pages/LearnPage';
 import RelaxPage from './pages/RelaxPage';
 import ChatPage from './pages/ChatPage';
 import { VRTherapyPage } from './components/VRTherapy/VRTherapyPage';
-import { Home, BookOpen, Wind, MessageCircle, Award, Glasses } from 'lucide-react';
+import { MindGamesPage } from './pages/MindGamesPage';
+import { InsightsPage } from './pages/InsightsPage';
+import { Home, BookOpen, Wind, MessageCircle, Award, Glasses, Gamepad2, BarChart3 } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
 
-type PageType = 'home' | 'learn' | 'relax' | 'chat' | 'vr-therapy';
+type PageType = 'home' | 'learn' | 'relax' | 'chat' | 'vr-therapy' | 'mind-games' | 'insights';
 
 interface User {
   id: string;
@@ -95,6 +97,10 @@ function App() {
         return <ChatPage />;
       case 'vr-therapy':
         return <VRTherapyPage onSessionComplete={() => addWellnessPoints(25)} />;
+      case 'mind-games':
+        return <MindGamesPage />;
+      case 'insights':
+        return <InsightsPage />;
       default:
         return (
           <EmotionAwareHomePage
@@ -181,6 +187,28 @@ function App() {
             title="VR Therapy"
           >
             <Glasses className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => handleNavigation('mind-games')}
+            className={`p-4 rounded-2xl transition-all ${
+              currentPage === 'mind-games'
+                ? 'bg-white/30 text-white scale-110'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+            title="MindGames"
+          >
+            <Gamepad2 className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => handleNavigation('insights')}
+            className={`p-4 rounded-2xl transition-all ${
+              currentPage === 'insights'
+                ? 'bg-white/30 text-white scale-110'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+            title="Insights"
+          >
+            <BarChart3 className="w-6 h-6" />
           </button>
         </div>
       </nav>
