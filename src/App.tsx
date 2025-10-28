@@ -8,6 +8,9 @@ import { MindGamesPage } from './pages/MindGamesPage';
 import { InsightsPage } from './pages/InsightsPage';
 import { Home, BookOpen, Wind, MessageCircle, Award, Glasses, Gamepad2, BarChart3 } from 'lucide-react';
 import { supabase } from './lib/supabase';
+import InteractiveMeditationScene from './components/InteractiveMeditationScene';
+import ThemeToggle from './components/ThemeToggle';
+import { useTheme } from './context/ThemeContext';
 
 
 type PageType = 'home' | 'learn' | 'relax' | 'chat' | 'vr-therapy' | 'mind-games' | 'insights';
@@ -21,6 +24,7 @@ interface User {
 }
 
 function App() {
+  const { theme } = useTheme();
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [wellnessPoints, setWellnessPoints] = useState(0);
   const [user, setUser] = useState<User | null>(null);
@@ -114,31 +118,44 @@ function App() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <div
-        className="fixed inset-0 -z-10"
-        style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
-          backgroundSize: '400% 400%',
-          animation: 'gradientShift 15s ease infinite',
-        }}
-      />
+      <div className={`fixed inset-0 -z-10 transition-colors duration-300 ${
+        theme === 'dark' ? 'bg-gray-900' : 'bg-[#667eea]'
+      }`} />
+      
+      {/* Theme Toggle Button */}
+      <ThemeToggle />
+      
+      {/* Interactive Meditation Scene - only on home page */}
+      {currentPage === 'home' && <InteractiveMeditationScene />}
 
-      <div className="fixed top-6 right-6 z-50 flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20">
+      <div className={`fixed top-6 right-6 z-30 flex items-center gap-3 px-6 py-3 rounded-2xl backdrop-blur-lg border transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'bg-gray-800/50 border-gray-700/50' 
+          : 'bg-white/10 border-white/20'
+      }`}>
         <Award className="w-6 h-6 text-yellow-300" />
-        <div className="text-white">
+        <div className={theme === 'dark' ? 'text-white' : 'text-white'}>
           <p className="text-sm font-light">Wellness Points</p>
           <p className="text-2xl font-medium">{wellnessPoints}</p>
         </div>
       </div>
 
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex gap-2 p-3 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30">
+        <div className={`flex gap-2 p-3 rounded-3xl backdrop-blur-lg border shadow-2xl transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-gray-800/50 border-gray-700/50'
+            : 'bg-white/10 border-white/20'
+        }`}>
           <button
             onClick={() => handleNavigation('home')}
             className={`p-4 rounded-2xl transition-all ${
               currentPage === 'home'
-                ? 'bg-white/30 text-white scale-110'
-                : 'text-white/70 hover:text-white hover:bg-white/10'
+                ? theme === 'dark' 
+                  ? 'bg-white/20 text-white scale-110'
+                  : 'bg-white/30 text-white scale-110'
+                : theme === 'dark'
+                  ? 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                  : 'text-white/70 hover:text-white hover:bg-white/10'
             }`}
             title="Home"
           >
@@ -215,13 +232,6 @@ function App() {
 
       <main className="relative z-10">{renderPage()}</main>
 
-      <style>{`
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-      `}</style>
     </div>
   );
 }

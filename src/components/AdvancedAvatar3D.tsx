@@ -225,12 +225,10 @@ export default function AdvancedAvatar3D({
           className={`relative w-48 h-48 rounded-full transition-all duration-200 ${getAnimationClass()}`}
           style={{
             transform: `scale(${pulseScale}) rotate(${interpolatedConfig.headTilt}deg)`,
-            background: `linear-gradient(135deg, ${interpolatedConfig.colors.from}, ${interpolatedConfig.colors.to})`,
-            boxShadow: `0 0 ${60 * interpolatedConfig.glowIntensity}px ${interpolatedConfig.colors.glow}40, inset 0 0 40px rgba(255,255,255,0.2)`,
+            background: interpolatedConfig.colors.from,
+            boxShadow: `0 0 ${60 * interpolatedConfig.glowIntensity}px ${interpolatedConfig.colors.glow}40`,
           }}
         >
-          {/* Inner glow */}
-          <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/20 to-transparent" />
 
           {/* Eyes */}
           <div

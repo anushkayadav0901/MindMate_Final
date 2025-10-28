@@ -36,8 +36,8 @@ export interface ExpressionConfig {
   sparkles: boolean;
   pulseSpeed: number; // 0.5 to 2
   colors: {
-    from: string;
-    to: string;
+    from: string; // Solid color (same as 'to' for solid appearance)
+    to: string; // Same as 'from' for solid color
     glow: string;
   };
   animation: 'bounce' | 'pulse' | 'wave' | 'none';
@@ -56,7 +56,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.4,
     sparkles: false,
     pulseSpeed: 1,
-    colors: { from: '#98D8C8', to: '#6BCF7F', glow: '#98D8C8' },
+    colors: { from: '#98D8C8', to: '#98D8C8', glow: '#98D8C8' },
     animation: 'none',
   },
 
@@ -72,7 +72,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.7,
     sparkles: true,
     pulseSpeed: 1.2,
-    colors: { from: '#FFD700', to: '#FFA500', glow: '#FFD700' },
+    colors: { from: '#FFD700', to: '#FFD700', glow: '#FFD700' },
     animation: 'bounce',
   },
 
@@ -88,7 +88,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.5,
     sparkles: false,
     pulseSpeed: 0.7,
-    colors: { from: '#87CEEB', to: '#4682B4', glow: '#87CEEB' },
+    colors: { from: '#87CEEB', to: '#87CEEB', glow: '#87CEEB' },
     animation: 'pulse',
   },
 
@@ -104,7 +104,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.6,
     sparkles: false,
     pulseSpeed: 0.9,
-    colors: { from: '#DDA0DD', to: '#9370DB', glow: '#DDA0DD' },
+    colors: { from: '#DDA0DD', to: '#DDA0DD', glow: '#DDA0DD' },
     animation: 'none',
   },
 
@@ -120,7 +120,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.65,
     sparkles: false,
     pulseSpeed: 1.1,
-    colors: { from: '#FFB6C1', to: '#FF69B4', glow: '#FFB6C1' },
+    colors: { from: '#FFB6C1', to: '#FFB6C1', glow: '#FFB6C1' },
     animation: 'wave',
   },
 
@@ -136,7 +136,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.45,
     sparkles: false,
     pulseSpeed: 0.85,
-    colors: { from: '#B0C4DE', to: '#778899', glow: '#B0C4DE' },
+    colors: { from: '#B0C4DE', to: '#B0C4DE', glow: '#B0C4DE' },
     animation: 'none',
   },
 
@@ -152,7 +152,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.7,
     sparkles: true,
     pulseSpeed: 1.15,
-    colors: { from: '#98FB98', to: '#32CD32', glow: '#98FB98' },
+    colors: { from: '#98FB98', to: '#98FB98', glow: '#98FB98' },
     animation: 'pulse',
   },
 
@@ -168,7 +168,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.8,
     sparkles: true,
     pulseSpeed: 1.5,
-    colors: { from: '#FFE4B5', to: '#FFA07A', glow: '#FFE4B5' },
+    colors: { from: '#FFE4B5', to: '#FFE4B5', glow: '#FFE4B5' },
     animation: 'bounce',
   },
 
@@ -184,7 +184,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.85,
     sparkles: true,
     pulseSpeed: 1.2,
-    colors: { from: '#FFD700', to: '#FF8C00', glow: '#FFD700' },
+    colors: { from: '#FFD700', to: '#FFD700', glow: '#FFD700' },
     animation: 'bounce',
   },
 
@@ -200,7 +200,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.55,
     sparkles: false,
     pulseSpeed: 0.8,
-    colors: { from: '#ADD8E6', to: '#5F9EA0', glow: '#ADD8E6' },
+    colors: { from: '#ADD8E6', to: '#ADD8E6', glow: '#ADD8E6' },
     animation: 'none',
   },
 
@@ -216,7 +216,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.9,
     sparkles: true,
     pulseSpeed: 1.6,
-    colors: { from: '#FF6347', to: '#FF4500', glow: '#FF6347' },
+    colors: { from: '#FF6347', to: '#FF6347', glow: '#FF6347' },
     animation: 'bounce',
   },
 
@@ -232,7 +232,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.6,
     sparkles: false,
     pulseSpeed: 0.85,
-    colors: { from: '#DDA0DD', to: '#BA55D3', glow: '#DDA0DD' },
+    colors: { from: '#DDA0DD', to: '#DDA0DD', glow: '#DDA0DD' },
     animation: 'pulse',
   },
 
@@ -248,7 +248,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.5,
     sparkles: false,
     pulseSpeed: 0.75,
-    colors: { from: '#4682B4', to: '#2F4F4F', glow: '#4682B4' },
+    colors: { from: '#4682B4', to: '#4682B4', glow: '#4682B4' },
     animation: 'none',
   },
 
@@ -264,7 +264,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.75,
     sparkles: true,
     pulseSpeed: 1.3,
-    colors: { from: '#FF69B4', to: '#FF1493', glow: '#FF69B4' },
+    colors: { from: '#FF69B4', to: '#FF69B4', glow: '#FF69B4' },
     animation: 'wave',
   },
 
@@ -280,7 +280,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 1,
     sparkles: true,
     pulseSpeed: 1.8,
-    colors: { from: '#FFD700', to: '#FFA500', glow: '#FFD700' },
+    colors: { from: '#FFD700', to: '#FFD700', glow: '#FFD700' },
     animation: 'bounce',
   },
 
@@ -296,7 +296,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.5,
     sparkles: false,
     pulseSpeed: 0.9,
-    colors: { from: '#D8BFD8', to: '#9370DB', glow: '#D8BFD8' },
+    colors: { from: '#D8BFD8', to: '#D8BFD8', glow: '#D8BFD8' },
     animation: 'none',
   },
 
@@ -312,7 +312,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.3,
     sparkles: false,
     pulseSpeed: 0.6,
-    colors: { from: '#B0C4DE', to: '#708090', glow: '#B0C4DE' },
+    colors: { from: '#B0C4DE', to: '#B0C4DE', glow: '#B0C4DE' },
     animation: 'none',
   },
 
@@ -328,7 +328,7 @@ export const expressionConfigs: Record<MicroExpression, ExpressionConfig> = {
     glowIntensity: 0.8,
     sparkles: true,
     pulseSpeed: 1.25,
-    colors: { from: '#FF6347', to: '#DC143C', glow: '#FF6347' },
+    colors: { from: '#FF6347', to: '#FF6347', glow: '#FF6347' },
     animation: 'pulse',
   },
 };

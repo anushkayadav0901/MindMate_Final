@@ -50,15 +50,16 @@ export default function Avatar3D({ isSpeaking = false, mood = 'neutral', message
   }, [isSpeaking]);
 
   const getMoodColors = () => {
+    // Use a single solid color instead of gradients
     switch (mood) {
       case 'happy':
-        return { from: '#FFD700', to: '#FFA500', glow: '#FFD700' };
+        return { main: '#FFD700', glow: '#FFD700' };
       case 'calm':
-        return { from: '#87CEEB', to: '#4682B4', glow: '#87CEEB' };
+        return { main: '#87CEEB', glow: '#87CEEB' };
       case 'thinking':
-        return { from: '#DDA0DD', to: '#9370DB', glow: '#DDA0DD' };
+        return { main: '#DDA0DD', glow: '#DDA0DD' };
       default:
-        return { from: '#98D8C8', to: '#6BCF7F', glow: '#98D8C8' };
+        return { main: '#98D8C8', glow: '#98D8C8' };
     }
   };
 
@@ -100,12 +101,10 @@ export default function Avatar3D({ isSpeaking = false, mood = 'neutral', message
           className="relative w-48 h-48 rounded-full transition-all duration-200"
           style={{
             transform: `scale(${pulseScale})`,
-            background: `linear-gradient(135deg, ${colors.from}, ${colors.to})`,
-            boxShadow: `0 0 60px ${colors.glow}40, inset 0 0 40px rgba(255,255,255,0.2)`,
+            background: colors.main,
+            boxShadow: `0 0 60px ${colors.glow}40`,
           }}
         >
-          <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/20 to-transparent" />
-
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 flex gap-8">
             <div
               className={`w-5 h-5 rounded-full bg-white/90 shadow-lg transition-all duration-100 ${
