@@ -1,0 +1,38 @@
+[
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.74491,
+    "box": {
+      "x1": 113.63251,
+      "y1": 70.33553,
+      "x2": 1152.79089,
+      "y2": 784.19275
+    },
+    "text": "UNL OcK THE UNLIOTED Enjoy Fab Deals & Member Benefits Member Exclusive 20% OFF ADD-ONS sss 'Gourmair' All Seats & + Cabin & Hot Meals Biz Upgrades Check-in Baggage Please update the phone number associated with your NeuPass rewards program to unlock member benefits"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.51639,
+    "box": {
+      "x1": 405.62857,
+      "y1": 170.54483,
+      "x2": 863.50592,
+      "y2": 311.26187
+    },
+    "text": "UNLOCK THE UNLIOOTED"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.37447,
+    "box": {
+      "x1": 411.82068,
+      "y1": 318.52173,
+      "x2": 855.05548,
+      "y2": 348.92648
+    },
+    "text": "Enjoy Fab Deals & Member Benefits"
+  }
+]

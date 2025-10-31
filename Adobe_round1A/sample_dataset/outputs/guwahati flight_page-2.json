@@ -1,0 +1,194 @@
+[
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.95342,
+    "box": {
+      "x1": 175.03442,
+      "y1": 886.06079,
+      "x2": 1078.0199,
+      "y2": 964.84491
+    },
+    "text": "Pre-book from our wide range of Gourmair Hot Meals and Lite Bites at least 18 hours before departure for International and 12 hours before for Domestic flights. Quick bites munchies and beverages are available to buy on board."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.95158,
+    "box": {
+      "x1": 175.36902,
+      "y1": 1499.79919,
+      "x2": 1123.30054,
+      "y2": 1581.85718
+    },
+    "text": "x an ag x an mo) deq anaws eao pae (an ah x an ga x an gg) beq aaqan aao aanan ann nm 10 cm). The total permitted weight for the two pieces must not exceed 7 kg unless you have pre-booked Xtra-Carry-On cabin baggage.."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.94989,
+    "box": {
+      "x1": 174.28705,
+      "y1": 1149.02051,
+      "x2": 1101.24573,
+      "y2": 1202.41968
+    },
+    "text": "Please check state regulations and local travel restrictions before you fly. You can view a list of guidelines under Support on airindiaexpress.com.."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.94945,
+    "box": {
+      "x1": 175.26093,
+      "y1": 1355.71277,
+      "x2": 1116.55188,
+      "y2": 1434.43018
+    },
+    "text": "Carry a valid boarding pass, ID proof and any relevant documents, including visas or entry. permits.You may be denied boarding,detainedor deportedby the respective authorities if you fail to meet requirements.."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.9376,
+    "box": {
+      "x1": 175.53548,
+      "y1": 1030.12805,
+      "x2": 1054.29004,
+      "y2": 1083.13208
+    },
+    "text": "Web check-in from 14 days up to 3 hours before your departure for International and domestic 1 hour before departure on airindiaexpress.com.."
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.93345,
+    "box": {
+      "x1": 174.77106,
+      "y1": 1251.64441,
+      "x2": 401.28555,
+      "y2": 1290.6488
+    },
+    "text": "At the Airport"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.913,
+    "box": {
+      "x1": 174.90448,
+      "y1": 1326.7356,
+      "x2": 379.52902,
+      "y2": 1352.99536
+    },
+    "text": "Travel documents"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.89792,
+    "box": {
+      "x1": 174.16771,
+      "y1": 856.88953,
+      "x2": 397.16855,
+      "y2": 883.37561
+    },
+    "text": "Pre-book your Mea"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.88975,
+    "box": {
+      "x1": 174.61011,
+      "y1": 1472.35718,
+      "x2": 349.46594,
+      "y2": 1499.49707
+    },
+    "text": "Cabin Baggage"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.88844,
+    "box": {
+      "x1": 174.5585,
+      "y1": 739.40112,
+      "x2": 482.69894,
+      "y2": 765.85614
+    },
+    "text": "Check your Contact Details"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.87312,
+    "box": {
+      "x1": 174.40308,
+      "y1": 1121.42871,
+      "x2": 552.31708,
+      "y2": 1146.49841
+    },
+    "text": "Evingsafewith Air India Express"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.87311,
+    "box": {
+      "x1": 174.4438,
+      "y1": 1002.3125,
+      "x2": 333.77527,
+      "y2": 1027.20483
+    },
+    "text": "Web Check-in"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.7561,
+    "box": {
+      "x1": 197.87749,
+      "y1": 652.87982,
+      "x2": 994.75116,
+      "y2": 681.82397
+    },
+    "text": "24/7 Call Centre: +91 124 443 5600/ +91 124 443 5601 I Chat with Tia (+916360012345)"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.61478,
+    "box": {
+      "x1": 174.80081,
+      "y1": 1616.3634,
+      "x2": 381.78876,
+      "y2": 1645.51111
+    },
+    "text": "Checked Baggage"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.53367,
+    "box": {
+      "x1": 173.47783,
+      "y1": 768.01117,
+      "x2": 1107.22302,
+      "y2": 820.63208
+    },
+    "text": "It is important that you update your correct mobile number and email, so we can keep you posted about any changes or disruptions, and to ensure you get your loyalty benefits.."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.50834,
+    "box": {
+      "x1": 173.99287,
+      "y1": 767.78101,
+      "x2": 1107.54993,
+      "y2": 820.78943
+    },
+    "text": "It is important that you update your correct mobile number and email, so we can keep you posted about any changes or disruptions, and to ensure you get your loyalty benefits."
+  }
+]

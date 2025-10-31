@@ -1,0 +1,170 @@
+[
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.70258,
+    "box": {
+      "x1": 767.44476,
+      "y1": 264.94022,
+      "x2": 1125.90588,
+      "y2": 289.23135
+    },
+    "text": "Booked on Sun, Oct 12 2025, 04:41 (UTC"
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.66068,
+    "box": {
+      "x1": 153.57753,
+      "y1": 1471.54187,
+      "x2": 460.90637,
+      "y2": 1599.52637
+    },
+    "text": ""
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.62299,
+    "box": {
+      "x1": 114.63334,
+      "y1": 275.99307,
+      "x2": 1132.26978,
+      "y2": 1677.49829
+    },
+    "text": "IX 2879 Fri,Oct 24 2025 Onward (Xpress Value) Operated by Air India Express 11:00 1h 05m 12:05 Fri, Oct 24 2025 Fri, Oct 24 2025 VGA, Vijayawada HYD, Hyderabad Vijayawada Intl Airport Rajiv Gandhi International Airport Layover :HYD, Rajiv Gandhi International Airport-4h15m IX 2893 Operated by Air India Express 16:20 2h 45m 19:05 Fri, Oct 24 2025 Fri, Oct 24 2025 HYD, Hyderabad GAU, Guwahati Rajiv Gandhi International Airport Lokpriya Gopinath Bordoloi International Airport. T1 Name Seat Add Ons Ms Gubba Pavani 7 kg Cabin Baggage + (Student) 25 kg Check-in Baggage VGA-HYD HYD - GAU"
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.57836,
+    "box": {
+      "x1": 153.67047,
+      "y1": 1230.09644,
+      "x2": 461.00452,
+      "y2": 1356.9126
+    },
+    "text": ""
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.55279,
+    "box": {
+      "x1": 149.88869,
+      "y1": 1154.27527,
+      "x2": 363.17386,
+      "y2": 1215.31897
+    },
+    "text": "Ms Gubba Pavani (Student)"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.48399,
+    "box": {
+      "x1": 152.69666,
+      "y1": 193.69243,
+      "x2": 294.92999,
+      "y2": 218.95488
+    },
+    "text": "PNR :M12ZVL"
+  },
+  {
+    "name": "abandon",
+    "class": 2,
+    "confidence": 0.47691,
+    "box": {
+      "x1": 751.95312,
+      "y1": 76.09399,
+      "x2": 1133.31506,
+      "y2": 233.98364
+    },
+    "text": "AIR INDIA express"
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.31235,
+    "box": {
+      "x1": 126.53848,
+      "y1": 192.4196,
+      "x2": 150.3853,
+      "y2": 216.51804
+    },
+    "text": ""
+  },
+  {
+    "name": "abandon",
+    "class": 2,
+    "confidence": 0.30578,
+    "box": {
+      "x1": 119.75978,
+      "y1": 266.56839,
+      "x2": 575.04547,
+      "y2": 290.91071
+    },
+    "text": "Itinerary generated on Sun, Oct 12 2025, 04:47 (UTC)"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.29938,
+    "box": {
+      "x1": 155.56116,
+      "y1": 1610.70154,
+      "x2": 243.27626,
+      "y2": 1629.95496
+    },
+    "text": "HYD-GAU"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.29728,
+    "box": {
+      "x1": 153.42169,
+      "y1": 113.25837,
+      "x2": 341.79681,
+      "y2": 144.08585
+    },
+    "text": "Dear Gubba"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.29553,
+    "box": {
+      "x1": 154.66078,
+      "y1": 150.57442,
+      "x2": 345.43475,
+      "y2": 171.22002
+    },
+    "text": "Your booking is confirmed!"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.26529,
+    "box": {
+      "x1": 131.10452,
+      "y1": 112.9425,
+      "x2": 343.1416,
+      "y2": 144.04446
+    },
+    "text": "Dear Gubba"
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.25158,
+    "box": {
+      "x1": 112.7029,
+      "y1": 276.01071,
+      "x2": 1131.1123,
+      "y2": 1674.03589
+    },
+    "text": "IX 2879 Fri,Oct 24 2025 Onward (Xpress Value) Operated by Air India Express 11:00 1h 05m 12:05 Fri, Oct 24 2025 Fri, Oct 24 2025 VGA, Vijayawada HYD, Hyderabad Vijayawada Intl Airport Rajiv Gandhi International Airport Layover:HYD,Rajiv Gandhi International Airport-4h15m IX2893 Operated by Air India Express 16:20 2h 45m 19:05 Fri, Oct 24 2025 Fri, Oct 24 2025 HYD, Hyderabad GAU,Guwahati Rajiv Gandhi International Airport Lokpriya Gopinath Bordoloi International Airport, T1 Name Seat Add Ons Ms Gubba Pavani 7 kg Cabin Baggage + (Student) 25 kg Check-in Baggage. VGA -HYD HYD - GAU"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.96848,
+    "box": {
+      "x1": 175.02711,
+      "y1": 461.6713,
+      "x2": 1113.5813,
+      "y2": 572.35529
+    },
+    "text": "Guests must carry Portable Mobile Chargers and Power Banks in their hand baggage as they are not allowed in checked-in baggage for safety reasons. It is advised to pack fragile items securely to prevent damage, as the airline will not be held responsible for any damage."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.9624,
+    "box": {
+      "x1": 174.49171,
+      "y1": 76.51735,
+      "x2": 1104.7406,
+      "y2": 213.29927
+    },
+    "text": "Two (2) check-in bags are included for Xpress Biz Fares and on all international flights One (1) check-in bag is included for all other fares on domestic flights. Extra charges are levied for any additional pieces of baggage. Pre-book up to 40 kg excess baggage / extra piece(s) at lower than airport prices. Guests travelling on the same PNR, can combine baggage allowances. Each bag should weigh no more than 32 kg."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.95246,
+    "box": {
+      "x1": 174.04362,
+      "y1": 237.67935,
+      "x2": 1123.59729,
+      "y2": 321.37421
+    },
+    "text": "for international flights, the first 20 kg costs INR 2oo0 at the airport. Also, remember that if. your booking is in non-INR currency, the baggage price might vary at the airport.."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.95076,
+    "box": {
+      "x1": 173.39001,
+      "y1": 384.43533,
+      "x2": 1073.08435,
+      "y2": 438.22134
+    },
+    "text": "When packing your bags, please keep in mind the items that are prohibited from being carried and the regulations on the carriage of liquids, aerosols and gels."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.93281,
+    "box": {
+      "x1": 174.76636,
+      "y1": 633.21667,
+      "x2": 1052.43689,
+      "y2": 722.20929
+    },
+    "text": "Opens:3hours before allflights (domestic &international) Closes: 1 hour before departure for metro airports (domestic & international) and 45 minutes for domestic flights at other airports"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.91409,
+    "box": {
+      "x1": 174.03714,
+      "y1": 906.96295,
+      "x2": 1070.8479,
+      "y2": 963.89301
+    },
+    "text": "Please refer to Air India Express Conditions of Carriage and our liability thereunder by clicking the following link: Terms and Conditions."
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.90441,
+    "box": {
+      "x1": 174.17249,
+      "y1": 746.72485,
+      "x2": 765.336,
+      "y2": 775.8728
+    },
+    "text": ""
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.85616,
+    "box": {
+      "x1": 173.23285,
+      "y1": 801.12744,
+      "x2": 507.47601,
+      "y2": 829.46014
+    },
+    "text": "Know Your Passenger Rights"
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.83034,
+    "box": {
+      "x1": 174.99422,
+      "y1": 854.39069,
+      "x2": 749.20874,
+      "y2": 882.59235
+    },
+    "text": ""
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.8235,
+    "box": {
+      "x1": 174.65562,
+      "y1": 356.91913,
+      "x2": 361.33359,
+      "y2": 382.69785
+    },
+    "text": "Prohibited items"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.78491,
+    "box": {
+      "x1": 173.7657,
+      "y1": 356.88132,
+      "x2": 362.16608,
+      "y2": 382.75583
+    },
+    "text": "Prohibited items"
+  },
+  {
+    "name": "title",
+    "class": 0,
+    "confidence": 0.51501,
+    "box": {
+      "x1": 174.43449,
+      "y1": 599.0304,
+      "x2": 893.14343,
+      "y2": 627.13098
+    },
+    "text": ""
+  },
+  {
+    "name": "plain text",
+    "class": 1,
+    "confidence": 0.39925,
+    "box": {
+      "x1": 174.43449,
+      "y1": 599.0304,
+      "x2": 893.14343,
+      "y2": 627.13098
+    },
+    "text": ""
+  },
+  {
+    "name": "figure",
+    "class": 3,
+    "confidence": 0.32208,
+    "box": {
+      "x1": 616.07544,
+      "y1": 1003.46417,
+      "x2": 1145.5061,
+      "y2": 1111.84912
+    },
+    "text": "AlrSewa Chat with Tia Ministry of Civil Aviation"
+  },
+  {
+    "name": "abandon",
+    "class": 2,
+    "confidence": 0.27857,
+    "box": {
+      "x1": 172.75687,
+      "y1": 1001.51044,
+      "x2": 1142.92407,
+      "y2": 1117.31946
+    },
+    "text": "airindiaexpress.com AlrSewa Chat with Tia Ministry of Fast BookingsFab DealsFantastic Value Civil Aviation"
+  }
+]
