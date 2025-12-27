@@ -1,10 +1,3 @@
-Sure — here’s the **directly copy-paste-ready code** for your GitHub `README.md` ⬇️
-
-Just copy everything between the lines and paste it into your repo’s `README.md` file.
-
----
-
-````markdown
 # 🧠 MindMate – AI-Powered Mental Health & Learning Platform
 
 > 🇮🇳 India's First Web-Based VR Mental Health App with Integrated Study Support
@@ -149,50 +142,3 @@ Ensure you have installed:
 ```bash
 git clone https://github.com/your-username/mindmate-ai.git
 cd mindmate-ai
-````
-
-#### 2. Install Python dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-#### 3. Install Node.js dependencies
-
-```bash
-npm install
-```
-
-#### 4. Start the backend server
-
-```bash
-python server.py
-```
-
-#### 5. Start the frontend
-
-```bash
-npm run dev
-```
-
----
-
-## 🧠 Contributing
-
-We welcome contributions!
-Please fork this repo, create a feature branch, and submit a pull request.
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 💬 Acknowledgments
-
-* Built with ❤️ by students passionate about **mental health** and **AI-powered learning**
-* Inspired by CBT, mindfulness therapy, and EdTech innovation
-
-```
