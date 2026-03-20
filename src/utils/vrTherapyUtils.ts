@@ -55,8 +55,8 @@ export const getEnvironmentById = (id: string): VREnvironment => {
   return environment;
 };
 
-export const getAudioGuidance = (environmentId: string): { text: string, timing: number }[] => {
-  const guidanceMap: Record<string, { text: string, timing: number }[]> = {
+export const getAudioGuidance = (environmentId: string): { text: string, timing: number, id?: string, type?: string }[] => {
+  const guidanceMap: Record<string, { text: string, timing: number, id?: string, type?: string }[]> = {
     'peaceful-garden': [
       { text: 'Welcome to your peaceful garden. Take a deep breath and look around.', timing: 0 },
       { text: 'Notice the gentle colors and shapes around you. Feel yourself becoming calmer.', timing: 30 },

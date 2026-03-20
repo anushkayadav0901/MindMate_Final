@@ -4,9 +4,10 @@ import { WorryBubblePop } from '../components/MindGames/WorryBubblePop';
 import { EmotionPatternMatching } from '../components/MindGames/EmotionPatternMatching';
 import { MindfulMaze } from '../components/MindGames/MindfulMaze';
 import { GameAnalysis } from '../components/MindGames/GameAnalysis';
-import { Wind, Cloud, Heart, Target, ArrowLeft, Award, Clock, TrendingUp } from 'lucide-react';
+import { KineticCanvas } from '../components/KineticCanvas';
+import { Wind, Cloud, Heart, Target, ArrowLeft, Award, Clock, TrendingUp, Sparkles } from 'lucide-react';
 
-export type GameType = 'breathing' | 'worry-bubble' | 'emotion-matching' | 'mindful-maze';
+export type GameType = 'breathing' | 'worry-bubble' | 'emotion-matching' | 'mindful-maze' | 'kinetic-canvas';
 
 export interface GameSession {
   gameType: GameType;
@@ -64,6 +65,15 @@ export const MindGamesPage: React.FC = () => {
       gradient: 'from-orange-500 to-orange-700',
       therapeuticBenefit: 'Focus Training',
       recommendedFor: 'ADHD, racing thoughts, focus issues'
+    },
+    {
+      id: 'kinetic-canvas' as GameType,
+      title: 'Kinetic Canvas',
+      description: 'Emotion-driven fluid particle art powered by physical hand tracking',
+      icon: Sparkles,
+      gradient: 'from-fuchsia-500 to-fuchsia-700',
+      therapeuticBenefit: 'Active Expression',
+      recommendedFor: 'Creative release, tension frustration, physical grounding'
     }
   ];
 
@@ -119,6 +129,8 @@ export const MindGamesPage: React.FC = () => {
         return <EmotionPatternMatching onComplete={handleGameComplete} onBack={() => setSelectedGame(null)} />;
       case 'mindful-maze':
         return <MindfulMaze onComplete={handleGameComplete} onBack={() => setSelectedGame(null)} />;
+      case 'kinetic-canvas':
+        return <div className="p-4 w-full h-[800px]"><KineticCanvas onBack={() => setSelectedGame(null)} /></div>;
       default:
         return null;
     }
@@ -126,7 +138,7 @@ export const MindGamesPage: React.FC = () => {
 
   if (selectedGame) {
     return (
-      <div className="w-full min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      <div className="w-full">
         {renderGame()}
       </div>
     );
@@ -134,7 +146,7 @@ export const MindGamesPage: React.FC = () => {
 
   if (showAnalysis) {
     return (
-      <div className="w-full min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6">
+      <div className="w-full p-6">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => setShowAnalysis(false)}
@@ -150,7 +162,7 @@ export const MindGamesPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6">
+    <div className="w-full p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

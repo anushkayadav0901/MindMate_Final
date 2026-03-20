@@ -11,7 +11,7 @@ export const InsightsPage: React.FC = () => {
   const [sleepRating, setSleepRating] = useState(5);
   const [energyLevel, setEnergyLevel] = useState('');
   const [currentMood, setCurrentMood] = useState('');
-  const [checkInStep, setCheckInStep] = useState(1);
+
 
   // Auto-show morning check-in if it's morning time
   useEffect(() => {
@@ -68,7 +68,7 @@ export const InsightsPage: React.FC = () => {
     setSleepRating(5);
     setEnergyLevel('');
     setCurrentMood('');
-    setCheckInStep(1);
+
     
     // Close modal
     setShowMorningCheckIn(false);
@@ -82,14 +82,14 @@ export const InsightsPage: React.FC = () => {
     setSleepRating(5);
     setEnergyLevel('');
     setCurrentMood('');
-    setCheckInStep(1);
+
     setShowMorningCheckIn(false);
   };
 
   // ANALYTICS VIEW
   if (currentView === 'analytics') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="w-full">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <button 
             onClick={() => setCurrentView('landing')}
@@ -131,7 +131,7 @@ export const InsightsPage: React.FC = () => {
   // INSIGHTS VIEW
   if (currentView === 'insights') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="w-full">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <button 
             onClick={() => setCurrentView('landing')}
@@ -167,7 +167,7 @@ export const InsightsPage: React.FC = () => {
 
   // LANDING VIEW (Default)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="w-full">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

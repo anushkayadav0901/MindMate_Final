@@ -3,7 +3,7 @@ import { VRScene } from './VRScene';
 import { VREnvironmentSelector } from './VREnvironmentSelector';
 import { SessionSummary } from './SessionSummary';
 import { VREnvironment } from './VREnvironments/types';
-import { environments } from '../../utils/vrTherapyUtils';
+
 
 interface SessionData {
   environmentId: string;
@@ -20,18 +20,18 @@ interface VRTherapyPageProps {
 
 export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete }) => {
   const [selectedEnvironment, setSelectedEnvironment] = useState<VREnvironment | null>(null);
-  const [sessionActive, setSessionActive] = useState(false);
+
   const [showSessionSummary, setShowSessionSummary] = useState(false);
   const [sessionData, setSessionData] = useState<SessionData | null>(null);
 
   const handleStartSession = () => {
     if (selectedEnvironment) {
-      setSessionActive(true);
+
     }
   };
 
   const handleEndSession = () => {
-    setSessionActive(false);
+
   };
 
   const handleSessionData = (data: SessionData) => {
@@ -51,11 +51,11 @@ export const VRTherapyPage: React.FC<VRTherapyPageProps> = ({ onSessionComplete 
   const handleStartNewSession = () => {
     setShowSessionSummary(false);
     setSessionData(null);
-    setSessionActive(false);
+
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 text-white p-6">
+    <div className="w-full text-white p-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">VR Therapy Session</h1>
         
